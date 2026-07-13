@@ -1,26 +1,116 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Open Sauce Sans';
+  src: url('/fonts/open-sauce-sans-latin-300-normal.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  src: url('/fonts/open-sauce-sans-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  src: url('/fonts/open-sauce-sans-latin-400-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  src: url('/fonts/open-sauce-sans-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  src: url('/fonts/open-sauce-sans-latin-600-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  src: url('/fonts/open-sauce-sans-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  src: url('/fonts/open-sauce-sans-latin-800-normal.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Open Sauce Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Open Sauce Sans", system-ui, -apple-system, sans-serif;
+  
+  --color-brand-bg: #FFFFFF;
+  --color-brand-text: #171717;
+  --color-brand-sage: #D8E2DC;
+  --color-brand-terracotta: #F4E3DC;
+  --color-brand-beige: #F7EFE8;
+  --color-brand-blue: #8BA4CB;
+  --color-brand-blue-dark: #708CBA;
+  
+  --shadow-soft: none;
+  --shadow-soft-hover: none;
+}
+
 :root {
-  --background: #ffffff;
+  --background: #FFFFFF;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Custom scrollbar to match the organic layout */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5DFD9;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C8BFB7;
+}
+
+/* Custom masonry grid rules */
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+}
+.masonry-grid {
+  column-count: 1;
+  column-gap: 2rem;
+}
+@media (min-width: 768px) {
+  .masonry-grid {
+    column-count: 2;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
