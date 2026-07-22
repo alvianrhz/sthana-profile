@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function About() {
-  // Tambahkan state untuk melacak status loading masing-masing gambar
   const [isLeftLoaded, setIsLeftLoaded] = useState(false);
   const [isTextLoaded, setIsTextLoaded] = useState(false);
   const [isProfilLoaded, setIsProfilLoaded] = useState(false);
@@ -35,7 +34,8 @@ export default function About() {
           {/* Kolom Tengah: Teks Filosofi */}
           <div className="flex-1 flex flex-col justify-end h-full relative z-10 py-4 md:py-6">
             
-            <div className="relative md:absolute top-0 md:top-[-4rem] left-0 md:left-auto md:right-0 w-full md:w-[137.2%] max-w-[450px] md:max-w-[700px] pointer-events-none select-none z-0 mb-6 md:mb-0">
+            {/* KUNCI MOBILE 1: Penambahan mx-auto agar bounding box gambar berada di tengah (jika layar > 450px tapi masih mode mobile) */}
+            <div className="relative md:absolute top-0 md:top-[-4rem] left-0 md:left-[-37.2%] w-full md:w-[160%] max-w-[450px] md:max-w-[700px] mx-auto md:mx-0 pointer-events-none select-none z-0 mb-6 md:mb-0">
               <Image
                 src="/hues-text.webp"
                 alt="Hues & Views"
@@ -49,10 +49,15 @@ export default function About() {
               />
             </div>
 
-            <div className="relative z-10 flex flex-col items-end md:ml-auto w-full md:max-w-[360px] pt-0 md:pt-0 mt-auto mb-0">
+            {/* KUNCI MOBILE 2 & DESKTOP:
+                - max-w-[450px] dan mx-auto menyamakan ukuran kotak paragraf dengan kotak gambar HUES di mode mobile.
+                - md:mr-[6%] lg:mr-[10%] menarik sisi kanan paragraf di desktop agar sejajar HUES. 
+            */}
+            <div className="relative z-10 flex flex-col w-full max-w-[450px] md:max-w-[380px] mx-auto md:mx-0 md:ml-auto pt-0 md:pt-0 mt-auto mb-0 md:mr-[8%] lg:mr-[12%]">
               <span className="text-xl font-bold tracking-[0.1em] text-neutral-900 uppercase font-sans mb-4 text-right w-full">
                 [STHANA]
               </span>
+              {/* KUNCI MOBILE 3: Menggunakan text-justify murni agar teks menyentuh sisi kiri dan kanan secara merata */}
               <p className="text-neutral-700 font-light text-sm md:text-base leading-relaxed text-justify font-sans m-0 p-0">
                 Memaknai desain sebagai perpaduan antara rasa dan fungsi. Berlandaskan filosofi through hues and views, kami menerjemahkan warna, pencahayaan, tekstur, dan sudut pandang menjadi ruang yang menghadirkan keindahan sekaligus mendukung aktivitas penggunanya secara optimal.
               </p>
@@ -77,7 +82,6 @@ export default function About() {
               priority
             />
           </div>
-          
           
         </div>
       </div>
