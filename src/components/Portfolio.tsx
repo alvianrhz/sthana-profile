@@ -173,7 +173,7 @@ function SliderCard({ project }: { project: Project }) {
       </AnimatePresence>
 
       {/* Navigation Arrows */}
-      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 z-10 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
         <button
           onClick={(e) => {
             e.stopPropagation();

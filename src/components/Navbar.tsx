@@ -16,7 +16,7 @@ export default function Navbar() {
             alt="Sthana Logo"
             width={160}
             height={54}
-            className={`object-contain h-10 md:h-12 w-auto scale-150 md:scale-[5] origin-left transition-all duration-700 ease-in-out ${
+            className={`object-contain h-10 md:h-12 w-auto scale-[2.5] md:scale-[5] origin-left transition-all duration-700 ease-in-out ${
               isLoaded ? "blur-0 opacity-100" : "blur-md opacity-0"
             }`}
             onLoad={() => setIsLoaded(true)}
