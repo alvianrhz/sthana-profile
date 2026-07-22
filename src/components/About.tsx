@@ -35,7 +35,7 @@ export default function About() {
           {/* Kolom Tengah: Teks Filosofi */}
           <div className="flex-1 flex flex-col justify-end h-full relative z-10 py-4 md:py-6">
             
-            <div className="relative md:absolute top-0 md:top-[-4rem] left-0 md:left-[-37.2%] w-full md:w-[160%] max-w-[450px] md:max-w-[700px] pointer-events-none select-none z-0 mb-6 md:mb-0">
+            <div className="relative md:absolute top-0 md:top-[-4rem] left-0 md:left-auto md:right-0 w-full md:w-[137.2%] max-w-[450px] md:max-w-[700px] pointer-events-none select-none z-0 mb-6 md:mb-0">
               <Image
                 src="/hues-text.webp"
                 alt="Hues & Views"
@@ -53,7 +53,7 @@ export default function About() {
               <span className="text-xl font-bold tracking-[0.1em] text-neutral-900 uppercase font-sans mb-4 text-right w-full">
                 [STHANA]
               </span>
-              <p className="text-neutral-700 font-light text-sm md:text-base leading-relaxed text-right md:text-justify font-sans m-0 p-0">
+              <p className="text-neutral-700 font-light text-sm md:text-base leading-relaxed text-justify font-sans m-0 p-0">
                 Memaknai desain sebagai perpaduan antara rasa dan fungsi. Berlandaskan filosofi through hues and views, kami menerjemahkan warna, pencahayaan, tekstur, dan sudut pandang menjadi ruang yang menghadirkan keindahan sekaligus mendukung aktivitas penggunanya secara optimal.
               </p>
             </div>
