@@ -66,21 +66,28 @@ export default function About() {
 
           {/* Kolom Kanan: Foto Profil Nabila */}
           <div className="h-[400px] md:h-full w-full md:w-auto flex-shrink-0 relative flex justify-end mt-8 md:mt-0 overflow-hidden bg-stone-100">
-            <Image
-              src="/new-profil.webp"
-              alt="Nabila Pramesti Kusuma"
-              width={0}
-              height={0}
-              sizes="100vw"
-              className={`w-full md:w-auto h-full object-cover md:object-right rounded-none grayscale hover:grayscale-0 cursor-pointer transition-all duration-1000 ease-in-out ${
-                isProfilColored ? "grayscale-0" : ""
-              } ${
-                isProfilLoaded ? "blur-0 scale-100" : "blur-xl scale-105"
-              }`}
-              onLoad={() => setIsProfilLoaded(true)}
-              onClick={() => setIsProfilColored(!isProfilColored)}
-              priority
-            />
+            <a
+              href="https://www.instagram.com/nblakusuma/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto h-full block"
+            >
+              <Image
+                src="/new-profil.webp"
+                alt="Nabila Pramesti Kusuma"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className={`w-full md:w-auto h-full object-cover md:object-right rounded-none grayscale hover:grayscale-0 cursor-pointer transition-all duration-1000 ease-in-out ${
+                  isProfilColored ? "grayscale-0" : ""
+                } ${
+                  isProfilLoaded ? "blur-0 scale-100" : "blur-xl scale-105"
+                }`}
+                onLoad={() => setIsProfilLoaded(true)}
+                onClick={() => setIsProfilColored(!isProfilColored)}
+                priority
+              />
+            </a>
           </div>
           
         </div>
